@@ -14,9 +14,13 @@ class QuotesTableViewController: UITableViewController {
     @lazy var quoteCellIdentifier = "QuoteTableViewCell"
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onContentSizeChange:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "onContentSizeChange:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
         
         tableView.estimatedRowHeight = 89
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -46,6 +50,5 @@ class QuotesTableViewController: UITableViewController {
 
         return cell
     }
-
-
+    
 }

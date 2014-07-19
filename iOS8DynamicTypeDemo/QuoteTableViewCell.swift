@@ -28,6 +28,7 @@ class QuoteTableViewCell: UITableViewCell {
         scenarioLabel.accessibilityLabel = "Quote Scenario"
         scenarioLabel.accessibilityValue = quote.scenario
         
+        
         quoteContentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         scenarioLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
     }
