@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i8T-OJ-HSK">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+    </dependencies>
+    <scenes>
+        <!--Seinfeld Quotes-->
+        <scene sceneID="Kfw-gW-LiD">
+            <objects>
+                <tableViewController id="H72-qj-7UN" customClass="QuotesTableViewController" customModule="iOS8DynamicTypeDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" id="u16-CJ-3h3">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuoteTableViewCell" rowHeight="89" id="qnI-dg-B5M" customClass="QuoteTableViewCell" customModule="iOS8DynamicTypeDemo" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qnI-dg-B5M" id="6SZ-rd-Fzn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="440" translatesAutoresizingMaskIntoConstraints="NO" id="glb-GL-eh7">
+                                            <rect key="frame" x="20" y="20" width="440" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scenario" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="440" translatesAutoresizingMaskIntoConstraints="NO" id="TK1-5H-I41">
+                                            <rect key="frame" x="20" y="48" width="440" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TK1-5H-I41" firstAttribute="trailing" secondItem="glb-GL-eh7" secondAttribute="trailing" id="4du-fE-Luz"/>
+                                        <constraint firstAttribute="bottom" secondItem="TK1-5H-I41" secondAttribute="bottom" constant="20" id="5iu-aV-Q06"/>
+                                        <constraint firstItem="TK1-5H-I41" firstAttribute="leading" secondItem="glb-GL-eh7" secondAttribute="leading" id="AYR-JJ-sxi"/>
+                                        <constraint firstItem="TK1-5H-I41" firstAttribute="top" secondItem="glb-GL-eh7" secondAttribute="bottom" constant="8" id="Yi2-sG-YGB"/>
+                                        <constraint firstItem="glb-GL-eh7" firstAttribute="top" secondItem="6SZ-rd-Fzn" secondAttribute="top" constant="20" id="fSY-UQ-2lN"/>
+                                        <constraint firstAttribute="trailing" secondItem="glb-GL-eh7" secondAttribute="trailing" constant="20" id="geX-Zr-39e"/>
+                                        <constraint firstItem="glb-GL-eh7" firstAttribute="leading" secondItem="6SZ-rd-Fzn" secondAttribute="leading" constant="20" id="ier-da-FMV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="quoteContentLabel" destination="glb-GL-eh7" id="Q5e-OS-DIp"/>
+                                    <outlet property="scenarioLabel" destination="TK1-5H-I41" id="PKc-Iv-GxX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="H72-qj-7UN" id="zHW-af-jOp"/>
+                            <outlet property="delegate" destination="H72-qj-7UN" id="ceO-KA-reN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Seinfeld Quotes" id="mJF-mQ-nDp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOg-xA-efH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="311"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fpI-yM-Od2">
+            <objects>
+                <navigationController id="i8T-OJ-HSK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sHP-4n-Ock">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="H72-qj-7UN" kind="relationship" relationship="rootViewController" id="jxo-SP-2OX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXb-7b-rTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="311"/>
+        </scene>
+    </scenes>
+</document>
