@@ -10,8 +10,8 @@ import UIKit
 
 class QuotesTableViewController: UITableViewController {
 
-    @lazy var quotes = Quote.allQuotes()
-    @lazy var quoteCellIdentifier = "QuoteTableViewCell"
+    lazy var quotes = Quote.allQuotes()
+    lazy var quoteCellIdentifier = "QuoteTableViewCell"
     
     override func viewDidLoad() {
         

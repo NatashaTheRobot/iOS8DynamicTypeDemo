@@ -22,6 +22,7 @@ class Quote {
         quotes += Quote(content: "When you look annoyed all the time, people think that you're busy.", scenario: "George in The Hot Tub")
         quotes += Quote(content: "I would drape myself in velvet if it were socially acceptable.", scenario: "George in The Label Maker")
         quotes += Quote(content: "You know what they say, 'You don't sell the steak, you sell the sizzle.'", scenario: "Kramer in The Bizzaro Jerry")
+        quotes += Quote(content: "直往前走！左／右拐弯到直往前走左／右拐弯到直往前走！左／右拐弯到！直往前走！左／右拐弯到", scenario: "Jerry learning Chinese")
         
         return quotes
     }
