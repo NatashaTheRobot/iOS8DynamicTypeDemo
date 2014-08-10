@@ -10,8 +10,8 @@ import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var quoteContentLabel: UILabel!
-    @IBOutlet weak var scenarioLabel: UILabel!
+    @IBOutlet weak private var quoteContentLabel: UILabel!
+    @IBOutlet weak private var scenarioLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

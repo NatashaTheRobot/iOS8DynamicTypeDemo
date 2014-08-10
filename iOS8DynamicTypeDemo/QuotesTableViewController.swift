@@ -10,8 +10,8 @@ import UIKit
 
 class QuotesTableViewController: UITableViewController {
 
-    lazy var quotes = Quote.allQuotes()
-    lazy var quoteCellIdentifier = "QuoteTableViewCell"
+    private lazy var quotes = Quote.allQuotes()
+    private lazy var quoteCellIdentifier = "QuoteTableViewCell"
     
     override func viewDidLoad() {
         
@@ -33,7 +33,7 @@ class QuotesTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func onContentSizeChange(notification: NSNotification) {
+    private func onContentSizeChange(notification: NSNotification) {
         tableView.reloadData()
     }
 
