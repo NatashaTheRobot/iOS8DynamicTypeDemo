@@ -33,7 +33,7 @@ class QuotesTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    internal func onContentSizeChange(notification: NSNotification) {
+    @objc private func onContentSizeChange(notification: NSNotification) {
         tableView.reloadData()
     }
 
