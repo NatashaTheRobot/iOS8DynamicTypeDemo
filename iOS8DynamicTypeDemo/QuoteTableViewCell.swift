@@ -10,15 +10,17 @@ import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
 
-    @IBOutlet weak private var quoteContentLabel: UILabel!
-    @IBOutlet weak private var scenarioLabel: UILabel!
+    @IBOutlet weak var quoteContentLabel: UILabel!
+    @IBOutlet weak var scenarioLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-    func configure(#quote : Quote) {
+    func configure(#quote: Quote) {
+    
+        quoteContentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         
         quoteContentLabel.text = quote.content
         quoteContentLabel.accessibilityLabel = "Quote Content"
@@ -28,6 +30,8 @@ class QuoteTableViewCell: UITableViewCell {
         scenarioLabel.accessibilityLabel = "Quote Scenario"
         scenarioLabel.accessibilityValue = quote.scenario
         
+        
+        quoteContentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         
         quoteContentLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
         scenarioLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)

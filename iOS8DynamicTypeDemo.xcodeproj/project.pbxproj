@@ -403,6 +403,7 @@
 				FACC8F2A197A864F00F057B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FACC8F2B197A864F00F057B6 /* Build configuration list for PBXNativeTarget "iOS8DynamicTypeDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +412,7 @@
 				FACC8F2D197A864F00F057B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

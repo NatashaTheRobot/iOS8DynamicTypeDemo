@@ -10,17 +10,20 @@ import UIKit
 
 class QuotesTableViewController: UITableViewController {
 
-    private lazy var quotes = Quote.allQuotes()
-    private lazy var quoteCellIdentifier = "QuoteTableViewCell"
+    let quotes = Quote.allQuotes()
+    let quoteCellIdentifier = "QuoteTableViewCell"
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "onContentSizeChange:",
+            name: UIContentSizeCategoryDidChangeNotification, object:nil)
+    }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "onContentSizeChange:",
-            name: UIContentSizeCategoryDidChangeNotification,
-            object: nil)
         
         tableView.estimatedRowHeight = 89
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -33,21 +36,21 @@ class QuotesTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    @objc private func onContentSizeChange(notification: NSNotification) {
+    func onContentSizeChange(notification: NSNotification) {
         tableView.reloadData()
     }
 
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return quotes.count
     }
-
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
-        let cell = tableView.dequeueReusableCellWithIdentifier(quoteCellIdentifier, forIndexPath: indexPath) as QuoteTableViewCell
-
+    
+    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+        let cell = tableView.dequeueReusableCellWithIdentifier(quoteCellIdentifier) as QuoteTableViewCell
+        
         cell.configure(quote: quotes[indexPath.row])
-
+        
         return cell
     }
     
